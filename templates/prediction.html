@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #bbdefb;
+  }
+  
+  h1 {
+    font-size: 50px;
+    color: black;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif ;
+  }
+
+p {
+  color:  Red;
+  font-family: "Times New Roman", Times, serif ;
+  font-size: 45px;
+  text-align: center;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+li{
+  color: black;
+  font-family: "Times New Roman", Times, serif ;
+}
+
+</style>
+</head>
+<body>
+<h1>Personality Predictor using Twitter Tweets</h1>
+<img src="{{url_for('static', filename='prediction.png')}}">
+<p>@{{username}} is {{predicted_type}} </p> 
+
+<p style="font-size: 33px; color:black;"> -Tweets- </p>
+{% for tweet in tweets %}
+<li><span class="my-handle">></span><input type="hidden" name="handles[]" value="{{ tweet }}"/>{{ tweet }}</li>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #bbdefb;
+}
+
+h1 {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif ;
+}
+
+p {
+  color:  black;
+  font-family: "Times New Roman", Times, serif ;
+  font-size: 30px;
+  text-align: center;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 36%;
+}
+
+input[type=text], form {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif ;
+}
+
+input[type=submit] {
+  background-color: whitesmoke;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif ;
+}
+
+</style>
+</head>
+<body>
+<h1>Personality Predictor using Twitter Tweets</h1>
+<img src="{{url_for('static', filename='personalities.png')}}">
+<p>Enter the username of Twitter user</p>
+<form action="{{url_for('prediction')}}" style="margin: auto; width: 520px;" method="POST">
+    <input type="text" id="username" name="username" placeholder="Username">
+    <input type="submit" value="Predict">
+</form>
+</body>
+</html>
